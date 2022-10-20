@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgendarController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,3 +29,9 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 route::match(['get', 'post'] , '/cadastro' , [LoginController::class , 'index'])->name('index');
 route::get('/usuario/cadastro', [LoginController::class, 'cadastro'])->name('cadastro');
 route::POST('/usuario/cadastro', [LoginController::class, 'cadastro'])->name('cadastro');
+
+######################
+######  AGENDAR  #####
+######################
+
+route::post('/agenda/store', [AgendarController::class, 'store'])->name('agenda-store');

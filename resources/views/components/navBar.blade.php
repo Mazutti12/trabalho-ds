@@ -1,10 +1,12 @@
-<nav class="navbar bg-light fixed-top">
+@include('components.modalAgenda')
+
+<nav class="navbar bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Nome Empresa</a>
         <a class="navbar-brand" href="#">Home</a>
         <a class="navbar-brand" href="#">About</a>
         <a class="navbar-brand" href="#">Outros</a>
-        <a class="navbar-brand btn btn-warning" href="#">Agendar</a>
+        <button type="button" class="navbar-brand btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">Agendar</button>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -23,13 +25,13 @@
                             <a class="nav-link active" aria-current="page" href="#">Perfil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Agendas</a>
+                            <a class="nav-link" href="#">Suas agendas</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Configurações</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Log Out</a>
+                            <a class="nav-link" href="{{ route('logout') }}">Log Out</a>
                 </div>
                 </li>
                 </ul>

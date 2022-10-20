@@ -3,5 +3,6 @@
 @section('container')
     @include('components.navBar')
 
+    
 
 @endsection
