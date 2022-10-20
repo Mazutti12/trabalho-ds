@@ -7,7 +7,7 @@
             <a class="navbar-brand" href="#">Home</a>
             <a class="navbar-brand" href="#">About</a>
             <a class="navbar-brand" href="#">Outros</a>
-            <a class="navbar-brand" href="#">Agendar </a>
+            <a class="navbar-brand btn-success" href="#">Agendar </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -50,10 +50,10 @@
         <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Entre</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Entre</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cadastre-se</a>
+                    <a class="nav-link" href="{{ route('cadastro') }}">Cadastre-se</a>
                 </li>
         </div>
         </li>

@@ -22,6 +22,7 @@ Route::get('/', function () {
 
 route::get('/login', [LoginController::class, 'login'])->name('login');
 route::POST('/login', [LoginController::class, 'login'])->name('login');
+
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 route::match(['get', 'post'] , '/cadastro' , [LoginController::class , 'index'])->name('index');
