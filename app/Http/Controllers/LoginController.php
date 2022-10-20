@@ -25,7 +25,7 @@ class LoginController extends Controller
             // Tenta o login
             if (Auth::attempt($credenciais)) {
                 session()->regenerate();
-                return redirect()->route('cadastro');
+                return redirect()->route('home');
             } else {
                 return redirect()
                     ->route('login')
@@ -66,6 +66,6 @@ class LoginController extends Controller
 
         session()->flash($status, $message);
 
-        return redirect()->route('index');
+        return redirect()->route('login');
     }
 }
