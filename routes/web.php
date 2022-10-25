@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AgendarController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,3 +36,6 @@ route::POST('/usuario/cadastro', [LoginController::class, 'cadastro'])->name('ca
 ######################
 
 route::post('/agenda/store', [AgendarController::class, 'store'])->name('agenda-store');
+
+
+Route::get('/sendmail', [MailController::class, 'index']);

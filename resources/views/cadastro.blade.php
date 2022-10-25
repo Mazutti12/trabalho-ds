@@ -5,7 +5,7 @@
 <form name="registration" action="{{ route('cadastro') }}" method="post">
     @csrf
     <div class="row g-3">
-        <div class="mb-3 ">
+        <div class="mb-3">
             <label for="name" class="form-label">Nome </label>
             <input type="text" class="form-control" name="name" id="name" placeholder="João da Silva" required>
             <!-- <div class="invalid-feedback">
