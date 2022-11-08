@@ -3,6 +3,7 @@
 use App\Http\Controllers\AgendarController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,11 +22,11 @@ Route::get('/', function () {
 });
 
 
-
 route::get('/login', [LoginController::class, 'login'])->name('login');
 route::POST('/login', [LoginController::class, 'login'])->name('login');
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 route::match(['get', 'post'] , '/cadastro' , [LoginController::class , 'index'])->name('index');
 route::get('/usuario/cadastro', [LoginController::class, 'cadastro'])->name('cadastro');
