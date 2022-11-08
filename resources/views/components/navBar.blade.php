@@ -52,7 +52,7 @@
                 <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Entre</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('cadastro') }}">Cadastre-se</a>
+                <a class="nav-link" href="{{ route('index') }}">Cadastre-se</a>
             </li>
     </div>
     </li>
