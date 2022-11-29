@@ -35,15 +35,12 @@ class AgendarController extends Controller
                 'nome_servico',
                 'data',
                 'horario',
-                'users.name'
+                'users.name as usuario_id'
             )
-            ->orderBy('id', 'desc')->get();
+            ->orderBy('id', 'desc')
+            ->get();
 
             foreach ($pedidos as $key => &$pedido) {
-
-                if($pedido->horario == 2){
-                    $pedido->horario == "09:00";
-                }
 
                 $pedido->data = Carbon::parse($pedido->data)->format('d/m/Y');
 
@@ -52,6 +49,7 @@ class AgendarController extends Controller
             return view('pedidos', [
                 'pedidos' => $pedidos
             ]);
+
         } catch (\Exception $e) {
             DB::rollback();
             return $e;

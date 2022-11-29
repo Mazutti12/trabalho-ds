@@ -24,17 +24,17 @@
                           <select name="horario" id="horarios">
                               <option value="0" selected></option>
                               <optgroup label="Horários de Manhã">
-                                  <option value="1">8:00</option>
-                                  <option value="2">9:00</option>
-                                  <option value="3">10:00</option>
-                                  <option value="4">11:00</option>
+                                  <option value="8:00">8:00</option>
+                                  <option value="9:00">9:00</option>
+                                  <option value="10:00">10:00</option>
+                                  <option value="11:00">11:00</option>
                               </optgroup>
                               <optgroup label="Horários de Tarde">
-                                  <option value="5">13:00</option>
-                                  <option value="6">14:00</option>
-                                  <option value="7">15:00</option>
-                                  <option value="8">16:00</option>
-                                  <option value="9">17:00</option>
+                                  <option value="13:00">13:00</option>
+                                  <option value="14:00">14:00</option>
+                                  <option value="15:00">15:00</option>
+                                  <option value="16:00">16:00</option>
+                                  <option value="17:00">17:00</option>
                               </optgroup>
                           </select>
                       </div>

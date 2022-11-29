@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->date('data');
             $table->string('nome_servico');
-            $table->integer('horario');
+            $table->string('horario');
             $table->unsignedBigInteger('usuario_id');
             $table->timestamps();
 
