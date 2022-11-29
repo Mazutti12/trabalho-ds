@@ -3,9 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class Pedido extends Model
+class Pedido2
 {
     use HasFactory;
 
@@ -16,4 +15,5 @@ class Pedido extends Model
         'horario',
         'usuario_id'
     ];
-}
+
+}   

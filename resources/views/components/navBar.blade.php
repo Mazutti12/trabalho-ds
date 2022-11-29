@@ -4,8 +4,8 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="#">BV AGENDAMENTOS</a>
         <a class="navbar-brand" href="{{route('home')}}">Home</a>
-        <a class="navbar-brand" href="#">About</a>
-        <a class="navbar-brand" href="#">Outros</a>
+        <a class="navbar-brand" href="{{route('agenda-index')}}">Agendamentos</a>
+        <a class="navbar-brand" href="{{route('avaliacoes')}}">Avaliações</a>
         <button type="button" class="navbar-brand btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">Agendar</button>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>

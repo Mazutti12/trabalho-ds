@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('data_inicio');
-            $table->dateTime('data_fim');
+            $table->date('data');
+            $table->string('nome_servico');
+            $table->integer('horario');
             $table->unsignedBigInteger('usuario_id');
             $table->timestamps();
 

@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Agendamento;
+use App\Models\Pedido;
 use Carbon\Carbon;
-use Carbon\CarbonImmutable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -18,16 +17,41 @@ class AgendarController extends Controller
             $data = $request->all();
             $data['usuario_id'] = Auth::user()->id;
 
+            Pedido::create($data);
 
-            //modal e banco foram exlcuidos, refazer
-            $agendamento = new Agendamento();
-            DB::beginTransaction();
-            $agendamento->fill($data);
-            $agendamento->save();
-            DB::commit();
+            return view('home');
+        } catch (\Exception $e) {
+            DB::rollback();
+            return $e;
+        }
+    }
+    public function index()
+    {
+        try {
 
-            return 'cadastro realizado com sucesso!';
+            $pedidos = Pedido::leftJoin('users','users.id', 'pedidos.usuario_id')
+            ->select(
+                'pedidos.id',
+                'nome_servico',
+                'data',
+                'horario',
+                'users.name'
+            )
+            ->orderBy('id', 'desc')->get();
 
+            foreach ($pedidos as $key => &$pedido) {
+
+                if($pedido->horario == 2){
+                    $pedido->horario == "09:00";
+                }
+
+                $pedido->data = Carbon::parse($pedido->data)->format('d/m/Y');
+
+            }
+
+            return view('pedidos', [
+                'pedidos' => $pedidos
+            ]);
         } catch (\Exception $e) {
             DB::rollback();
             return $e;
