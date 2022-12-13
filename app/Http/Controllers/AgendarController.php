@@ -43,7 +43,7 @@ class AgendarController extends Controller
 
             if($verificaAdmin == false){
             //refazer a pesquisa de confirmado
-            $pedidos = Pedido::leftJoin('users','users.id', 'pedidos.usuario_id')->where('confirmado', 1)
+            $pedidos = Pedido::leftJoin('users','users.id', 'pedidos.usuario_id')->whereNotNull('confirmado')
             ->where('usuario_id', $userId)
             ->select(
                 'pedidos.id',
@@ -72,7 +72,7 @@ class AgendarController extends Controller
             ]);
         }else if($verificaAdmin == true){
             //refazer a pesquisa de confirmado
-            $pedidos = Pedido::leftJoin('users','users.id', 'pedidos.usuario_id')->where('confirmado', 1)
+            $pedidos = Pedido::leftJoin('users','users.id', 'pedidos.usuario_id')->whereNotNull('confirmado')
             ->select(
                 'pedidos.id',
                 'nome_servico',

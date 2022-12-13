@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AgendamentosController extends Controller
 {
@@ -72,15 +73,16 @@ class AgendamentosController extends Controller
             return $e;
         }
     }
-    public function recusaServico(Request $request)
+    public function recusaServico(Pedido $id)
     {
         try {
             //não funcionou, rever a lógica
-            // return 'chegou';
+            DB::beginTransaction();
 
-            $data = $request->all();
-            $id = array_shift($data);
-            Pedido::where('id', $id)->update(['confirmado' => 1]);
+            $id->confirmado = 1;
+            $id->save();
+
+            DB::commit();
 
             return redirect('/solicitacoes');
 
@@ -88,16 +90,20 @@ class AgendamentosController extends Controller
             return $e;
         }
     }
-    public function aceitaServico(Request $request)
+    public function aceitaServico(Pedido $id)
     {
         try {
-            //não funcionou, rever a lógica
-            $data = $request->all();
-            $id = array_shift($data);
-            Pedido::where('id', $id)->update(['confirmado' => 0]);
+
+            DB::beginTransaction();
+
+            $id->confirmado = 0;
+            $id->save();
+
+            DB::commit();
 
             return redirect('/solicitacoes');
         } catch (Exception $e) {
+            DB::rollBack();
             return $e;
         }
     }
