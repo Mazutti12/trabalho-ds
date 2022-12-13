@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MailNotify;
 use App\Models\Pedido;
 use App\Models\User;
 use Carbon\Carbon;
@@ -9,6 +10,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class AgendamentosController extends Controller
 {
@@ -84,6 +86,16 @@ class AgendamentosController extends Controller
 
             DB::commit();
 
+            // Pedido::where('id', $id)->update(['confirmado' => 0]);
+
+            $msg = [
+                "subject"=>"Agendamento Recusado",
+                "body"=>"Seu Agendamento foi recusado!"
+                ];
+              // MailNotify class that is extend from Mailable class.
+
+            Mail::to('bernardobola300@gmail.com')->send(new MailNotify($msg));
+            return response()->json(['Great! Successfully send in your mail']);
             return redirect('/solicitacoes');
 
         } catch (Exception $e) {
@@ -93,6 +105,15 @@ class AgendamentosController extends Controller
     public function aceitaServico(Pedido $id)
     {
         try {
+
+            $msg = [
+                "subject"=>"Agendamento Confirmado",
+                "body"=>"Seu Agendamento foi enviado!"
+                ];
+              // MailNotify class that is extend from Mailable class.
+
+            Mail::to('bernardobola300@gmail.com')->send(new MailNotify($msg));
+            return response()->json(['Great! Successfully send in your mail']);
 
             DB::beginTransaction();
 

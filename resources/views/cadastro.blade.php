@@ -30,14 +30,7 @@
                                 Por favor, crie sua senha.
                             </div> -->
         </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Confirme sua senha</label>
-            <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="********" onkeyup='check();' required>
-            <!-- <div class="invalid-feedback">
-                                Por favor, confirme sua senha.
-                            </div> -->
-            <span id='message'></span>
-        </div>
+        
         <div class="mb-3 col-8">
             <button type="submit" class="btn btn-danger" name="submit" value="Register">Criar meu Cadastro</button>
         </div>
