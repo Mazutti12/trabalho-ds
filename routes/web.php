@@ -26,23 +26,23 @@ Route::get('/solicitacoes/aceita/{id}', [AgendamentosController::class, 'aceitaS
 Route::get('/solicitacoes/recusa/{id}', [AgendamentosController::class, 'recusaServico']);
 
 
-route::get('/login', [LoginController::class, 'login'])->name('login');
-route::POST('/login', [LoginController::class, 'login'])->name('login');
+route::match(['get', 'post'], '/login', [LoginController::class, 'login'])->name('login');
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 route::match(['get', 'post'] , '/cadastro' , [LoginController::class , 'index'])->name('index');
-route::get('/usuario/cadastro', [LoginController::class, 'cadastro'])->name('cadastro');
-route::POST('/usuario/cadastro', [LoginController::class, 'cadastro'])->name('cadastro');
+route::match(['get', 'post'], '/usuario/cadastro', [LoginController::class, 'cadastro'])->name('cadastro');
 
 ######################
 ######  AGENDAR  #####
 ######################
 
 route::post('/agenda/store', [AgendarController::class, 'store'])->name('agenda-store');
-route::get('/agenda/index', [AgendarController::class, 'index'])->name('agenda-index');
+
+route::middleware(['admin'])->group(function(){
+    route::get('/agenda/index', [AgendarController::class, 'index'])->name('agenda-index');
+});
 
 
 Route::get('/sendmail', [MailController::class, 'index']);
-

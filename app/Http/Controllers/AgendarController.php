@@ -15,8 +15,15 @@ class AgendarController extends Controller
     {
 
         try {
+
             $data = $request->all();
+
             $data['usuario_id'] = Auth::user()->id;
+
+            $dataPedido = Pedido::where('data', $request->data)->where('horario', $request->horario)->first();
+            if($dataPedido){
+                return view('home', ['erro' => "Data e hora já marcada.!"]);
+            }
 
             Pedido::create($data);
 
