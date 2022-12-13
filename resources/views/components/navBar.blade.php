@@ -5,7 +5,7 @@
         <a class="navbar-brand" href="#">BV AGENDAMENTOS</a>
         <a class="navbar-brand" href="{{route('home')}}">Home</a>
         <a class="navbar-brand" href="{{route('agenda-index')}}">Agendamentos</a>
-        <a class="navbar-brand" href="{{route('avaliacoes')}}">Avaliações</a>
+        <a class="navbar-brand" href="{{route('solicitacoes')}}">Solicitações</a>
         <button type="button" class="navbar-brand btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">Agendar</button>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -24,10 +24,10 @@
                         <a class="nav-link active" aria-current="page" href="#">Perfil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Suas agendas</a>
+                        <a class="nav-link" href="{{route('agenda-index')}}">Suas agendas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Configurações</a>
+                        <a class="nav-link" href="{{route('solicitacoes')}}">Solicitações</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}">Log Out</a>

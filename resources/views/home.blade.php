@@ -25,10 +25,10 @@
                             <rect width="100%" height="100%" fill="#55595c" />
                         </svg>
 
-                        <div class="card-body"> 
+                        <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                         <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                         <div class="card-body">
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <div class="d-flex justify-content-between align-items-center">
-                           
+
                             </div>
                         </div>
                     </div>
@@ -74,8 +74,6 @@
         <p class="float-end mb-1">
             <a href="#">Back to top</a>
         </p>
-        <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p class="mb-0">New to Bootstrap? Visit the homepage or read our getting started guide.</p>
     </div>
 </footer>
 @endsection

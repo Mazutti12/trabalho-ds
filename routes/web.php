@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgendamentosController;
 use App\Http\Controllers\AgendarController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MailController;
@@ -20,9 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/avaliacoes', function () {
-    return view('avaliacao');
-})->name('avaliacoes');
+Route::get('/solicitacoes', [AgendamentosController::class, 'index'])->name('solicitacoes');
+Route::get('/solicitacoes/aceita/{id}', [AgendamentosController::class, 'aceitaServico']);
+Route::get('/solicitacoes/recusa/{id}', [AgendamentosController::class, 'recusaServico']);
 
 
 route::get('/login', [LoginController::class, 'login'])->name('login');
@@ -44,3 +45,4 @@ route::get('/agenda/index', [AgendarController::class, 'index'])->name('agenda-i
 
 
 Route::get('/sendmail', [MailController::class, 'index']);
+

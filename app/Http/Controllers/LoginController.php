@@ -66,6 +66,6 @@ class LoginController extends Controller
 
         session()->flash($status, $message);
 
-        return redirect()->route('login');
+        return redirect()->route('index');
     }
 }

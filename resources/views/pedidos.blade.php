@@ -12,6 +12,7 @@
                 <th>Data</th>
                 <th>Horário</th>
                 <th>Cliente</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +22,7 @@
                 <td>{{ $pedido->data }}</td>
                 <td>{{ $pedido->horario }}</td>
                 <td>{{ $pedido->usuario_id }}</td>
+                <td>{{ $pedido->status }}</td>
             </tr>
             @endforeach
         </tbody>
