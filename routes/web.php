@@ -40,9 +40,7 @@ route::match(['get', 'post'], '/usuario/cadastro', [LoginController::class, 'cad
 
 route::post('/agenda/store', [AgendarController::class, 'store'])->name('agenda-store');
 
-route::middleware(['admin'])->group(function(){
-    route::get('/agenda/index', [AgendarController::class, 'index'])->name('agenda-index');
-});
+route::get('/agenda/index', [AgendarController::class, 'index'])->name('agenda-index');
 
 
 Route::get('/sendmail', [MailController::class, 'index']);

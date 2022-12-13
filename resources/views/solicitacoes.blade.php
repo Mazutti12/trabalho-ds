@@ -21,7 +21,7 @@
                 <td>{{ $sol->data }}</td>
                 <td>{{ $sol->horario }}</td>
                 <td>{{ $sol->usuario_id }}</td>
-                @if ($sol->admin === 0)
+                @if ($adminUser === 1)
                 <td>
                     <a href="/solicitacoes/aceita/{{ $sol->pedido_id }}" style="border: none"><i class="bi bi-check2"></i></a>
                     <a href="/solicitacoes/recusa/{{ $sol->pedido_id }}" style="border: none"><i class="bi bi-x-lg"></i></a>

@@ -39,8 +39,10 @@ class AgendamentosController extends Controller
                     $pedido->data = Carbon::parse($pedido->data)->format('d/m/Y');
                 }
 
+                $adminUser = 0;
+
                 return view('solicitacoes', [
-                    'solicitacoes' => $solicitacoes
+                    'solicitacoes' => $solicitacoes, 'adminUser' => $adminUser
                 ]);
             } else if ($verificaAdmin == true) {
                 $solicitacoes = Pedido::where('confirmado', null)
@@ -60,9 +62,10 @@ class AgendamentosController extends Controller
 
                     $pedido->data = Carbon::parse($pedido->data)->format('d/m/Y');
                 }
+                $adminUser = 1;
 
                 return view('solicitacoes', [
-                    'solicitacoes' => $solicitacoes
+                    'solicitacoes' => $solicitacoes, 'adminUser' => $adminUser
                 ]);
             }
         } catch (Exception $e) {
